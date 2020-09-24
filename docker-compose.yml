@@ -1,0 +1,22 @@
+version: '3'
+services:
+  donkey:
+    build: ./donkeycar
+    ports:
+      - "8000:8000"
+      - "8887:8887"
+    stdin_open: true # docker run -i
+    tty: true
+    volumes:
+      # - ./donkeycar-console:/donkeycar-console
+      # - ./myconfig.py:/root/mycar/myconfig.py:consistent
+      # - ./donkeycar/.env:/donkeycar-console/.env_pc
+      - ./mycar:/root/mycar
+    environment:
+      - mode=sim
+       
+  # web:
+  #   image: alpine
+  #   stdin_open: true # docker run -i
+  #   tty: true
+    network_mode: "host"
