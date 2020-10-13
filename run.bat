@@ -1,0 +1,1 @@
+docker-compose -f docker-compose-win-mac.yml up -d --build
