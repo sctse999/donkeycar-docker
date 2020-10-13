@@ -1,0 +1,17 @@
+version: '3'
+services:
+  donkey:
+    build: ./donkeycar
+    ports:
+      - "8000:8000"
+      - "8887:8887"
+    stdin_open: true # docker run -i
+    tty: true
+    volumes:
+      # - ./donkeycar-console:/donkeycar-console  # For dev only
+      - ./mycar:/root/mycar
+    environment:
+      - mode=docker   
+  
+
+

@@ -2,13 +2,13 @@ DONKEY_GYM = True
 # DONKEY_SIM_PATH = "/home/jonathantse/Downloads/DonkeySimLinux/donkey_sim.x86_64"
 DONKEY_SIM_PATH = "remote"
 # DONKEY_GYM_ENV_NAME = "donkey-generated-roads-v0"
-# DONKEY_GYM_ENV_NAME = "donkey-mountain-track-v0"
+DONKEY_GYM_ENV_NAME = "donkey-roboracingleague-track-v0"
 
-GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "car", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
-GYM_CONF["racer_name"] = "Jonathan"
-GYM_CONF["country"] = "HK"
+GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "John Doe", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
+GYM_CONF["racer_name"] = "John Doe"
+GYM_CONF["country"] = "Mars"
 GYM_CONF["bio"] = "Dumb model"
-SIM_HOST = "localhost"
+SIM_HOST = "host.docker.internal"
 
 
 # """ 
@@ -29,7 +29,7 @@ SIM_HOST = "localhost"
 # MODELS_PATH = os.path.join(CAR_PATH, 'models')
 # 
 # #VEHICLE
-# DRIVE_LOOP_HZ = 20      # the vehicle loop will pause if faster than this speed.
+DRIVE_LOOP_HZ = 20
 # MAX_LOOPS = None        # the vehicle loop can abort after this many iterations, when given a positive integer.
 # 
 # #CAMERA
@@ -60,7 +60,7 @@ SIM_HOST = "localhost"
 # #DC_TWO_WHEEL uses HBridge pwm to control two drive motors, one on the left, and one on the right.
 # #SERVO_HBRIDGE_PWM use ServoBlaster to output pwm control from the PiZero directly to control steering, and HBridge for a drive motor.
 # #PIGPIO_PWM uses Raspberrys internal PWM
-DRIVE_TRAIN_TYPE = "MM1"
+# DRIVE_TRAIN_TYPE = "MM1"
 # 
 # #STEERING
 # STEERING_CHANNEL = 1            #channel on the 9685 pwm board 0-15
@@ -153,7 +153,7 @@ DRIVE_TRAIN_TYPE = "MM1"
 # JOYSTICK_MAX_THROTTLE = 0.5         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don't need the full speed available.
 # JOYSTICK_STEERING_SCALE = 1.0       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
 # AUTO_RECORD_ON_THROTTLE = True      #if true, we will record whenever throttle is not zero. if false, you must manually toggle recording with some other trigger. Usually circle button on joystick.
-# CONTROLLER_TYPE='ps3'               #(ps3|ps4|xbox|nimbus|wiiu|F710|rc3|MM1|custom) custom will run the my_joystick.py controller written by the `donkey createjs` command
+CONTROLLER_TYPE='F710'               #(ps3|ps4|xbox|nimbus|wiiu|F710|rc3|MM1|custom) custom will run the my_joystick.py controller written by the `donkey createjs` command
 # USE_NETWORKED_JS = False            #should we listen for remote joystick control over the network?
 # NETWORK_JS_SERVER_IP = "192.168.0.1"#when listening for network joystick control, which ip is serving this information
 # JOYSTICK_DEADZONE = 0.0             # when non zero, this is the smallest throttle before recording triggered.

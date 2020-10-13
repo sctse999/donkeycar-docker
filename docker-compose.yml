@@ -8,15 +8,14 @@ services:
     stdin_open: true # docker run -i
     tty: true
     volumes:
-      # - ./donkeycar-console:/donkeycar-console
-      # - ./myconfig.py:/root/mycar/myconfig.py:consistent
-      # - ./donkeycar/.env:/donkeycar-console/.env_pc
+      # - ./donkeycar-console:/donkeycar-console  # For dev only
       - ./mycar:/root/mycar
     environment:
-      - mode=sim
-       
-  # web:
-  #   image: alpine
-  #   stdin_open: true # docker run -i
-  #   tty: true
-    network_mode: "host"
+      - mode=docker
+    extra_hosts:
+      - "host.docker.internal:${HOST_IP}" 
+      # We need to add this for linux compatibility
+      # myconfig.py rely on host.docker.internal to look for simulator running on host
+      # https://stackoverflow.com/questions/48546124/what-is-linux-equivalent-of-host-docker-internal
+
+    # network_mode: "host"  # For dev only

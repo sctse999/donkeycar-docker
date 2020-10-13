@@ -23,6 +23,10 @@ WORKDIR /donkeycar
 RUN . /$venv_name/bin/activate && pip install -e .
 RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
 
+# Install KERAS VIS and ffmpeg for video generation
+RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
+RUN apt-get -y install ffmpeg
+
 RUN . /$venv_name/bin/activate && donkey createcar --path ~/mycar
 
 WORKDIR /
@@ -33,7 +37,7 @@ RUN . /$venv_name/bin/activate && pip install -e .[gym-donkeycar]
 
 WORKDIR /
 RUN python3 -m venv $dc_venv_path --system-site-packages
-RUN git clone https://github.com/robocarstore/donkeycar-console
+RUN git clone https://github.com/sctse999/donkeycar-console
 
 WORKDIR /donkeycar-console
 RUN . $dc_venv_path/bin/activate && pip install -r requirements/production.txt
