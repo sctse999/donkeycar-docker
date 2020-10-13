@@ -1,1 +1,1 @@
-docker-compose down
+docker-compose -f docker-compose-win-mac.yml down

@@ -25,6 +25,7 @@ RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
 
 # Install KERAS VIS and ffmpeg for video generation
 RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
+RUN . /$venv_name/bin/activate && pip install opencv-python
 RUN apt-get -y install ffmpeg
 
 RUN . /$venv_name/bin/activate && donkey createcar --path ~/mycar --overwrite
