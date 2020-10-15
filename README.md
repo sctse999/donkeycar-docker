@@ -6,6 +6,8 @@ This docker image allows you to run [donkey car](http://donkeycar.com/) without 
 - Contains pre-configured Donkeycar-console[](https://github.com/robocarstore/donkeycar-console) to work with mobile app
 - Support [donkey car mobile app](https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce)
 
+### Version
+- Donkey Car master branch (Currently v3.1.5)
 
 ### Windows Requirement
 - Min. Windows 10 Home, version 1903 or higher
