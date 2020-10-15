@@ -2,6 +2,7 @@ version: '3'
 services:
   donkey:
     build: ./donkeycar
+    container_name: donkeycar
     ports:
       - "8000:8000"
       - "8887:8887"
