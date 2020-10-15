@@ -14,15 +14,10 @@ This docker image allows you to run [donkey car](http://donkeycar.com/) without 
 ## How to run
 
 ### Linux
-#### Start
 ```
 git clone https://github.com/sctse999/donkeycar-docker
 cd donkeycar-docker
 ./start.sh
-```
-
-#### Stop
-```
 ./stop.sh
 ```
 
@@ -31,14 +26,10 @@ cd donkeycar-docker
 git clone https://github.com/sctse999/donkeycar-docker
 cd donkeycar-docker
 ./start.bat
-```
-
-#### Stop
-```
 ./stop.bat
 ```
 
-### Running it with the simulator and mobile app
+## Running it with the simulator and mobile app
 
 1. Download and run the [Donkey Car Simualtor](https://github.com/tawnkramer/gym-donkeycar/releases)
 
