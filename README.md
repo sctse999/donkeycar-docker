@@ -35,5 +35,5 @@ cd donkeycar-docker
 
 2. Run this docker image
 
-3. Install the mobile app and follow the medium article to use the mobile app
+3. Install the mobile app and follow this [medium article](https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce) to use the mobile app
 
