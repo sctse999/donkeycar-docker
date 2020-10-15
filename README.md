@@ -1,5 +1,5 @@
 # Donkeycar Docker Images
-This docker image allows you to run [donkey car](http://donkeycar.com/) without installing it. It also works well with the Donkey Car Controller mobile app.
+This docker image allows you to run [donkey car](http://donkeycar.com/) without installing it. The primary use case would be running this docker image on your PC (not Pi or Jetson nano) and use it together with the simulator. You can then use the mobile app to control the car in the simulator and perform training and test autopilot within the app.
 
 ## Features
 - Pre-configured docker image with the Donkey Car and other dependencies
@@ -37,4 +37,12 @@ cd donkeycar-docker
 ```
 ./stop.bat
 ```
+
+### Running it with the simulator and mobile app
+
+1. Download and run the [Donkey Car Simualtor](https://github.com/tawnkramer/gym-donkeycar/releases)
+
+2. Run this docker image
+
+3. Install the mobile app and follow the medium article to use the mobile app
 
