@@ -9,7 +9,7 @@ services:
     stdin_open: true # docker run -i
     tty: true
     volumes:
-      - ./donkeycar-console:/donkeycar-console  # For dev only
+      # - ./donkeycar-console:/donkeycar-console  # For dev only
       - ./mycar:/root/mycar
     environment:
       - mode=docker

@@ -16,6 +16,9 @@ This docker image allows you to run [donkey car](http://donkeycar.com/) without 
 ## How to run
 
 ### Linux
+Install docker. Follow instruction [here](https://linuxhint.com/install_configure_docker_ubuntu/) or [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04).
+
+Then, do the following:
 ```
 git clone https://github.com/sctse999/donkeycar-docker
 cd donkeycar-docker
@@ -24,6 +27,8 @@ cd donkeycar-docker
 ```
 
 ### Windows
+Install docker. Follow instruction [here](https://docs.docker.com/docker-for-windows/install-windows-home/).
+
 ```
 git clone https://github.com/sctse999/donkeycar-docker
 cd donkeycar-docker
