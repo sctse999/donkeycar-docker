@@ -1,11 +1,11 @@
 DONKEY_GYM = True
 # DONKEY_SIM_PATH = "/home/jonathantse/Downloads/DonkeySimLinux/donkey_sim.x86_64"
 DONKEY_SIM_PATH = "remote"
-# DONKEY_GYM_ENV_NAME = "donkey-generated-roads-v0"
-DONKEY_GYM_ENV_NAME = "donkey-roboracingleague-track-v0"
+DONKEY_GYM_ENV_NAME = "donkey-generated-roads-v0"
+# DONKEY_GYM_ENV_NAME = "donkey-roboracingleague-track-v0"
 
-GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "John Doe", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
-GYM_CONF["racer_name"] = "John Doe"
+GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "Racer 1", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
+GYM_CONF["racer_name"] = "Racer 1"
 GYM_CONF["country"] = "Mars"
 GYM_CONF["bio"] = "Dumb model"
 SIM_HOST = "host.docker.internal"
@@ -180,7 +180,7 @@ CONTROLLER_TYPE='F710'               #(ps3|ps4|xbox|nimbus|wiiu|F710|rc3|MM1|cus
 # #ROBOHAT MM1
 # HAVE_ROBOHAT = False            # set to true when using the Robo HAT MM1 from Robotics Masters.  This will change to RC Control.
 # MM1_STEERING_MID = 1500         # Adjust this value if your car cannot run in a straight line
-# MM1_MAX_FORWARD = 2000          # Max throttle to go fowrward. The bigger the faster
+MM1_MAX_FORWARD = 1700          # Max throttle to go fowrward. The bigger the faster
 # MM1_STOPPED_PWM = 1500
 # MM1_MAX_REVERSE = 1000          # Max throttle to go reverse. The smaller the faster
 # MM1_SHOW_STEERING_VALUE = False

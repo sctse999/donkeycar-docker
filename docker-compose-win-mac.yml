@@ -2,6 +2,7 @@ version: '3'
 services:
   donkey:
     build: ./donkeycar
+    hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
     ports:
       - "8000:8000"
