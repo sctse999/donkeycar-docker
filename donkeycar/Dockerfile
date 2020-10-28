@@ -2,8 +2,10 @@ FROM python:3.7-buster
 # FROM alpine:3
 
 ARG venv_name=env
-ARG dc_venv_path=/env_dc
+ARG venv_path=/env
+# ARG dc_venv_path=/env_dc
 
+RUN apt-get clean
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install git
@@ -37,15 +39,14 @@ WORKDIR /gym-donkeycar
 RUN . /$venv_name/bin/activate && pip install -e .[gym-donkeycar]
 
 WORKDIR /
-RUN python3 -m venv $dc_venv_path --system-site-packages
+RUN python3 -m venv $venv_path --system-site-packages
 RUN git clone https://github.com/sctse999/donkeycar-console
 
 WORKDIR /donkeycar-console
-RUN . $dc_venv_path/bin/activate && pip install -r requirements/production.txt
-
+RUN . $venv_path/bin/activate && pip install -r requirements/production.txt
 
 # Run the donkeycar console service
-ENV RUNTIME_ENV=${dc_venv_path}
+ENV RUNTIME_ENV=${venv_path}
 
 CMD ${RUNTIME_ENV}/bin/python manage.py runserver 0.0.0.0:8000
 

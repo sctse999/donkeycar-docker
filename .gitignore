@@ -1,3 +1,6 @@
 mycar/data
 mycar/movies
 mycar/models
+
+mycar/*.py
+mycar*

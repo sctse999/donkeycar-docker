@@ -11,7 +11,9 @@ case "${system}" in
     Darwin*)
         docker-compose -f docker-compose-win-mac.yml down
         ;;
-    *)    
+    *)
         echo "OS Not supported"
         ;;
 esac
+
+docker rm $(docker stop $(docker ps -a -q --filter ancestor=robocarstore/donkeycar --format="{{.ID}}"))

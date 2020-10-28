@@ -14,3 +14,5 @@ case "${system}" in
         echo "OS Not supported"
         ;;
 esac
+
+docker exec donkeycar sh -c '/env/bin/donkey createcar --path /root/mycar --overwrite'

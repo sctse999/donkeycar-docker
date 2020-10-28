@@ -44,3 +44,16 @@ cd donkeycar-docker
 
 3. Install the mobile app and follow this [medium article](https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce) to use the mobile app
 
+## Multiple docker in same host
+```
+python multi_player.py
+```
+
+
+## Change log
+
+### 20201028:
+- Support multiple player in same host
+- Both donkey and donkeycar-console share the same virtual environment now
+- donkeycar-console will honor the WEB_CONTROL_PORT setting from myconfig.py 
+- Clean mycar folder
