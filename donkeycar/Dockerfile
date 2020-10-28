@@ -13,7 +13,7 @@ RUN apt-get -y install vim net-tools
 RUN apt-get -y install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-pandas i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp
 RUN python3 -m venv env --system-site-packages
 
-RUN git clone https://github.com/autorope/donkeycar
+RUN git clone https://github.com/sctse999/donkeycar
 
 # RUN apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp
 
