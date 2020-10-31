@@ -40,6 +40,7 @@ RUN . /$venv_name/bin/activate && pip install -e .[gym-donkeycar]
 
 WORKDIR /
 RUN python3 -m venv $venv_path --system-site-packages
+WORKDIR /
 RUN git clone https://github.com/sctse999/donkeycar-console
 
 WORKDIR /donkeycar-console
