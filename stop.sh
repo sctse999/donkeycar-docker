@@ -16,4 +16,5 @@ case "${system}" in
         ;;
 esac
 
-docker rm $(docker stop $(docker ps -a -q --filter ancestor=robocarstore/donkeycar --format="{{.ID}}"))
+# docker rm $(docker stop $(docker ps -a -q --filter ancestor=robocarstore/donkeycar --format="{{.ID}}"))
+docker rm $(docker stop $(docker ps -a -q --filter name=donkeycar --format="{{.ID}}"))
