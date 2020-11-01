@@ -45,5 +45,5 @@ RUN . /$venv_name/bin/activate && pip install -r requirements/production.txt
 # Run the donkeycar console service
 RUN . /$venv_name/bin/activate && python manage.py migrate
 
-CMD ${RUNTIME_ENV}/bin/python manage.py runserver 0.0.0.0:8000
+CMD /$venv_name/bin/python manage.py runserver 0.0.0.0:8000
 
