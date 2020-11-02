@@ -30,7 +30,7 @@ if 0 < no_of_racers <= 10:
         console_path = Path.cwd() / "donkeycar-console"
 
         try:
-            os.mkdir(carapp_path))
+            os.mkdir(carapp_path)
         except:
             pass
 
@@ -54,7 +54,7 @@ if 0 < no_of_racers <= 10:
         print(" ".join(command))
         print(subprocess.check_output(" ".join(command), shell=True))
 
-        command = f"docker exec donkeycar{i} sh -c '/env/bin/donkey createcar --path /root/mycar --overwrite'"
+        command = f"docker exec donkeycar{i} sh -c \"/env/bin/donkey createcar --path /root/mycar --overwrite\""
         print(subprocess.check_output(command, shell=True))
 
         command = f"docker cp mycar/myconfig.py donkeycar{i}:/root/mycar/myconfig.py"
