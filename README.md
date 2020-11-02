@@ -57,3 +57,4 @@ python multi_player.py
 - Both donkey and donkeycar-console share the same virtual environment now
 - donkeycar-console will honor the WEB_CONTROL_PORT setting from myconfig.py 
 - Clean mycar folder
+- Windows compatibility for multi_player.py
