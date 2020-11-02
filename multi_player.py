@@ -5,8 +5,8 @@ from sys import platform
 
 
 command = "docker ps"
-CONSOLE_BASE_PORT = 8000                # 8001, 8002, 8003
-WEB_CONTROLLER_BASE_PORT = 10887        # 11887, 12887, 13887
+CONSOLE_BASE_PORT = 8000               # 8000, 8001, 8002, 8003
+WEB_CONTROLLER_BASE_PORT = 8887        # 8887, 9887, 10887
 IMAGE_NAME = "robocarstore/donkeycar:latest"
 
 no_of_racers = int(input("Enter number of racer: "))
@@ -34,13 +34,15 @@ if 0 < no_of_racers <= 10:
         except:
             pass
 
-        console_port = CONSOLE_BASE_PORT + i
-        web_controller_port = WEB_CONTROLLER_BASE_PORT + i * 1000
+        console_port = CONSOLE_BASE_PORT + i - 1
+        web_controller_port = WEB_CONTROLLER_BASE_PORT + (i-1) * 1000
+        db_volume_name = f"mycar{i}_db"
         
         command = ["docker run"]
         command.append(f"-p {console_port}:8000")
         command.append(f"-p {web_controller_port}:{web_controller_port}")
         command.append(f"-v {carapp_path}:/root/mycar")
+        command.append(f"-v {db_volume_name}:/donkeycar-console")
         # command.append(f"-v {console_path}:/donkeycar-console")
         command.append(f"-e WEB_CONTROL_PORT={web_controller_port}")
         command.append(f"-e mode=docker")
