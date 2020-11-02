@@ -23,6 +23,10 @@ RUN git checkout master
 RUN . /$venv_name/bin/activate && pip install -e .
 RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
 
+# Patch h5py version until donkeycar v3 pin h5py version < 3 
+RUN . /$venv_name/bin/activate && pip install h5py==2.10.0
+
+
 # Install KERAS VIS and ffmpeg for video generation
 RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
 RUN . /$venv_name/bin/activate && pip install opencv-python
