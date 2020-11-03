@@ -1,6 +1,6 @@
-mycar/data
-mycar/movies
-mycar/models
 
-mycar/*.py
-mycar*
+
+# mycar/*.py
+mycar1
+mycar2
+mycar3
