@@ -7,7 +7,7 @@ from sys import platform
 command = "docker ps"
 CONSOLE_BASE_PORT = 8000               # 8000, 8001, 8002, 8003
 WEB_CONTROLLER_BASE_PORT = 8887        # 8887, 9887, 10887
-IMAGE_NAME = "robocarstore/donkeycar:latest"
+IMAGE_NAME = "robocarstore/donkeycar:dev"
 
 no_of_racers = int(input("Enter number of racer: "))
 
@@ -59,10 +59,10 @@ if 0 < no_of_racers <= 10:
         command = f"docker exec donkeycar{i} sh -c \"/env/bin/donkey createcar --path /root/mycar --overwrite\""
         print(subprocess.check_output(command, shell=True))
 
-        command = f"docker cp mycar/myconfig.py donkeycar{i}:/root/mycar/myconfig.py"
+        command = f"docker cp mycar_dev/myconfig.py donkeycar{i}:/root/mycar/myconfig.py"
         print(subprocess.check_output(command, shell=True))
 
-        command = f"docker cp mycar/setup.json donkeycar{i}:/root/mycar/setup.json"
+        command = f"docker cp mycar_dev/setup.json donkeycar{i}:/root/mycar/setup.json"
         print(subprocess.check_output(command, shell=True))
 
 

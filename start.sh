@@ -16,3 +16,4 @@ case "${system}" in
 esac
 
 docker exec donkeycar sh -c '/env/bin/donkey createcar --path /root/mycar --overwrite'
+docker exec donkeycar sh -c 'find /root/mycar -type f -exec chmod 666 {} \;'
