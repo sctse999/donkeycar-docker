@@ -44,6 +44,10 @@ cd donkeycar-docker
 
 3. Install the mobile app and follow this [medium article](https://medium.com/robocar-store/robocar-controller-quick-start-guide-bdf8cb16d7ce) to use the mobile app
 
+
+## Dev mode
+You can use the `start.bat` / `start.sh` to start one single donkey car instance. Before you do that, you may also want to tweak `docker-compose-linux.yml` so that it will bind a local volume into the docker container. In this case, you can edit the local volume (which is files in your local disk) and see the changes reflected in the docker container in real-time. 
+
 ## Multiple docker in same host
 ```
 python multi_player.py

@@ -1,6 +1,7 @@
 version: '3'
 services:
   donkey:
+    build: .
     image: donkeycar:dev
     hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
@@ -11,8 +12,8 @@ services:
     tty: true
     volumes:
       # - ./donkeycar-console:/donkeycar-console  # For dev only
-      - donkeycar-console:/donkeycar-console
-      - donkeycar:/donkeycar
+      # - ./donkeycar-console:/donkeycar-console
+      # - ./donkeycar:/donkeycar
       - ./mycar_dev:/root/mycar
     environment:
       - mode=docker
