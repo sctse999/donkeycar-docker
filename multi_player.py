@@ -65,6 +65,13 @@ if 0 < no_of_racers <= 10:
         command = f"docker cp mycar/setup.json donkeycar{i}:/root/mycar/setup.json"
         print(subprocess.check_output(command, shell=True).decode("utf-8"))
 
+        # python search racer name and rename racename to racer1, racer2, racer3
+        file_object = open(f'mycar{i}/myconfig.py', 'a')
+        # Append 'hello' at the end of file
+        file_object.write(f'GYM_CONF["racer_name"] = "Racer {i}"')
+        # Close the file
+        file_object.close()
+
 
 
 
