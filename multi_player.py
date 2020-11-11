@@ -54,16 +54,16 @@ if 0 < no_of_racers <= 10:
         command.append(f"-d {IMAGE_NAME}")
 
         print(" ".join(command))
-        print(subprocess.check_output(" ".join(command), shell=True))
+        print(subprocess.check_output(" ".join(command), shell=True).decode("utf-8"))
 
         command = f"docker exec donkeycar{i} sh -c \"/env/bin/donkey createcar --path /root/mycar --overwrite\""
-        print(subprocess.check_output(command, shell=True))
+        print(subprocess.check_output(command, shell=True).decode("utf-8"))
 
         command = f"docker cp mycar/myconfig.py donkeycar{i}:/root/mycar/myconfig.py"
-        print(subprocess.check_output(command, shell=True))
+        print(subprocess.check_output(command, shell=True).decode("utf-8"))
 
         command = f"docker cp mycar/setup.json donkeycar{i}:/root/mycar/setup.json"
-        print(subprocess.check_output(command, shell=True))
+        print(subprocess.check_output(command, shell=True).decode("utf-8"))
 
 
 
