@@ -1,8 +1,9 @@
 version: '3'
 services:
   donkey:
-    build: ./donkeycar
-    hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
+    # build: .    # uncomment this if you want to build from dockerfile
+    image: robocarstore/donkeycar:latest
+    hostname: racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
     ports:
       - "8000:8000"
@@ -13,7 +14,4 @@ services:
       # - ./donkeycar-console:/donkeycar-console  # For dev only
       - ./mycar:/root/mycar
     environment:
-      - mode=docker   
-  
-
-
+      - mode=docker

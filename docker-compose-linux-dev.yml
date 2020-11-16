@@ -1,8 +1,9 @@
 version: '3'
 services:
-  donkey:    
-    image: robocarstore/donkeycar:latest
-    hostname: racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
+  donkey:
+    build: .
+    image: donkeycar:latest
+    hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
     ports:
       - "8000:8000"
@@ -10,6 +11,8 @@ services:
     stdin_open: true # docker run -i
     tty: true
     volumes:
+      # - ./donkeycar-console:/donkeycar-console  # For dev only
+      # - donkeycar-console/donkeycar-console
       - ./mycar:/root/mycar
     environment:
       - mode=docker
