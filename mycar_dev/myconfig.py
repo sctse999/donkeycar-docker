@@ -96,7 +96,7 @@ SIM_ARTIFICIAL_LATENCY = 0          # this is the millisecond latency in control
 # 
 # #RECORD OPTIONS
 # RECORD_DURING_AI = False
-# AUTO_CREATE_NEW_TUB = False     #create a new tub (tub_YY_MM_DD) directory when recording or append records to data directory directly
+AUTO_CREATE_NEW_TUB = True     #create a new tub (tub_YY_MM_DD) directory when recording or append records to data directory directly
 # 
 # #JOYSTICK
 # USE_JOYSTICK_AS_DEFAULT = False     #when starting the manage.py, when True, will not require a --js option to use the joystick

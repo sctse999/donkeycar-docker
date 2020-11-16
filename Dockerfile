@@ -45,6 +45,9 @@ RUN . /$venv_name/bin/activate && pip install -r requirements/production.txt
 # Run the donkeycar console service
 RUN . /$venv_name/bin/activate && python manage.py migrate
 
+RUN echo "source /env/bin/activate" > /root/.bashrc
+# WORKDIR /root/mycar
+
 # Run the donkeycar console service
 ENV RUNTIME_ENV=${venv_name}
 
