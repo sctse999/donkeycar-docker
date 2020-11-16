@@ -50,9 +50,10 @@ RUN . /$venv_name/bin/activate && pip install -r requirements/production.txt
 RUN . /$venv_name/bin/activate && python manage.py migrate
 
 # Activate the virtual env upon bash start
+WORKDIR /root/mycar
 RUN echo "source /env/bin/activate" > /root/.bashrc
 
 # Run the donkeycar console service
 ENV RUNTIME_ENV=${venv_name}
 
-CMD /${RUNTIME_ENV}/bin/python manage.py runserver 0.0.0.0:8000
+CMD /${RUNTIME_ENV}/bin/python /donkeycar-console/manage.py runserver 0.0.0.0:8000
