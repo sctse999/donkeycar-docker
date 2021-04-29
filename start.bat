@@ -1,3 +1,3 @@
-docker-compose -f docker-compose-win-mac.yml up -d --build
+docker-compose -f docker-compose-win-mac.yml up -d
 
-docker exec donkeycar2 sh -c "/env/bin/donkey createcar --path /root/mycar --overwrite"
+docker exec donkeycar sh -c "/env/bin/donkey createcar --path /root/mycar --overwrite"

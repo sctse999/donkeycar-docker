@@ -43,7 +43,6 @@ if 0 < no_of_racers <= 10:
         command.append(f"-p {web_controller_port}:{web_controller_port}")
         command.append(f"-v {carapp_path}:/root/mycar")
         command.append(f"-v {db_volume_name}:/donkeycar-console")
-        # command.append(f"-v {console_path}:/donkeycar-console")
         command.append(f"-e WEB_CONTROL_PORT={web_controller_port}")
         command.append(f"-e mode=docker")
         command.append(f"--name donkeycar{i}")
@@ -67,8 +66,10 @@ if 0 < no_of_racers <= 10:
 
         # python search racer name and rename racename to racer1, racer2, racer3
         file_object = open(f'mycar{i}/myconfig.py', 'a')
+
         # Append 'hello' at the end of file
-        file_object.write(f'GYM_CONF["racer_name"] = "Racer {i}"')
+        file_object.write(f'\nGYM_CONF["car_name"] = "Racer {i}"\n')
+        
         # Close the file
         file_object.close()
 
