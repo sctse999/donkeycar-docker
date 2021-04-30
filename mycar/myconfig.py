@@ -92,7 +92,7 @@
 # DEFAULT_MODEL_TYPE = 'linear'   #(linear|categorical|rnn|imu|behavior|3d|localizer|latent)
 # BATCH_SIZE = 128                #how many records to use when doing one pass of gradient decent. Use a smaller number if your gpu is running out of memory.
 # TRAIN_TEST_SPLIT = 0.8          #what percent of records to use for training. the remaining used for validation.
-# MAX_EPOCHS = 100                #how many times to visit all records of your data
+MAX_EPOCHS = 30                #how many times to visit all records of your data
 # SHOW_PLOT = True                #would you like to see a pop up display of final loss?
 # VERBOSE_TRAIN = True             #would you like to see a progress bar with text during training?
 # USE_EARLY_STOP = True           #would you like to stop the training if we see it's not improving fit?
@@ -242,7 +242,7 @@ WEB_INIT_MODE = "local"              # which control mode to start in. one of us
 # #then extract that and modify DONKEY_SIM_PATH.
 DONKEY_GYM = True
 DONKEY_SIM_PATH = "remote" #"/home/tkramer/projects/sdsandbox/sdsim/build/DonkeySimLinux/donkey_sim.x86_64" when racing on virtual-race-league use "remote", or user "remote" when you want to start the sim manually first.
-DONKEY_GYM_ENV_NAME = "donkey-generated-track-v0" # ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
+DONKEY_GYM_ENV_NAME = "donkey-generated-roads-v0" # ("donkey-generated-track-v0"|"donkey-generated-roads-v0"|"donkey-warehouse-v0"|"donkey-avc-sparkfun-v0")
 GYM_CONF = { "body_style" : "donkey", "body_rgb" : (128, 128, 128), "car_name" : "car", "font_size" : 100} # body style(donkey|bare|car01) body rgb 0-255
 GYM_CONF["racer_name"] = "Your Name"
 GYM_CONF["country"] = "Place"
@@ -262,7 +262,9 @@ SIM_HOST = "host.docker.internal"              # when racing on virtual-race-lea
 # AI_LAUNCH_KEEP_ENABLED = False      # when False ( default) you will need to hit the AI_LAUNCH_ENABLE_BUTTON for each use. This is safest. When this True, is active on each trip into "local" ai mode.
 # 
 # #Scale the output of the throttle of the ai pilot for all model types.
-# AI_THROTTLE_MULT = 1.0              # this multiplier will scale every throttle value for all output from NN models
+AI_THROTTLE_MULT = 1.0              # this multiplier will scale every throttle value for all output from NN models
+AUTO_CREATE_NEW_TUB = True
+USE_JOYSTICK_AS_DEFAULT=False
 # 
 # #Path following
 # PATH_FILENAME = "donkey_path.pkl"   # the path will be saved to this filename
