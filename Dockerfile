@@ -19,7 +19,7 @@ RUN git clone https://github.com/robocarstore/donkeycar
 
 WORKDIR /donkeycar
 
-RUN git checkout master
+RUN git checkout v3.1.5
 RUN . /$venv_name/bin/activate && pip install -e .
 RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
 
