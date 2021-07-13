@@ -19,9 +19,11 @@ RUN git clone https://github.com/robocarstore/donkeycar
 
 WORKDIR /donkeycar
 
-RUN git checkout v3.1.5
+RUN git checkout robocarstore_v4
+#RUN git checkout v4_dev # For dev only
+RUN git pull
 RUN . /$venv_name/bin/activate && pip install -e .
-RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
+#RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
 
 # Patch h5py version until donkeycar v3 pin h5py version < 3 
 RUN . /$venv_name/bin/activate && pip install h5py==2.10.0
@@ -32,6 +34,7 @@ RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/ke
 RUN . /$venv_name/bin/activate && pip install opencv-python
 RUN apt-get -y install ffmpeg
 
+RUN . /$venv_name/bin/activate && pip install requests_toolbelt netifaces
 RUN . /$venv_name/bin/activate && donkey createcar --path ~/mycar --overwrite
 
 WORKDIR /

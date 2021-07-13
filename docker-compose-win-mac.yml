@@ -1,7 +1,7 @@
 version: '3'
 services:
   donkey:
-    # build: .    # uncomment this if you want to build from dockerfile
+#    build: .    # uncomment this if you want to build from dockerfile
     image: robocarstore/donkeycar:latest
     hostname: racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
