@@ -52,6 +52,9 @@ python multi_player.py
 
 ## Change log
 
+### 20210714:
+- Update Dockerfile to v4.3.0
+
 ### 20201028:
 - Support multiple player in same host
 - Both donkey and donkeycar-console share the same virtual environment now
