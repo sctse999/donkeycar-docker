@@ -1,7 +1,7 @@
 version: '3'
 services:
   donkey:
-    build: .
+#    build: .
     image: donkeycar:latest
     hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
