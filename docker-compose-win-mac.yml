@@ -12,6 +12,6 @@ services:
     tty: true
     volumes:
       # - ./donkeycar-console:/donkeycar-console  # For dev only
-      - ./mycar:/root/mycar
+      - ./mycar:/root/mycarv5
     environment:
       - mode=docker

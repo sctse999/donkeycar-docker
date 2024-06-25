@@ -5,7 +5,7 @@ case "${system}" in
     Linux*)     
         export HOST_IP=$(ip addr show docker0 | grep -Po 'inet \K[\d.]+')
         echo $HOST_IP
-        docker-compose -f docker-compose-linux.yml down
+        docker compose -f docker-compose-linux-dev.yml down
         ;;
 
     Darwin*)
@@ -17,4 +17,4 @@ case "${system}" in
 esac
 
 # docker rm $(docker stop $(docker ps -a -q --filter ancestor=robocarstore/donkeycar --format="{{.ID}}"))
-docker rm $(docker stop $(docker ps -a -q --filter name=donkeycar --format="{{.ID}}"))
+# docker rm $(docker stop $(docker ps -a -q --filter name=donkeycar --format="{{.ID}}"))

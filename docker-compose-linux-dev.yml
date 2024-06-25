@@ -1,22 +1,25 @@
-version: '3'
 services:
   donkey:
-    build: .
-    image: donkeycar:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile_v5
+      args:
+        - mode=docker
+    # image: donkeycar:latest
     hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
     ports:
       - "8000:8000"
-      - "18887:18887"
+      - "8887:8887"
     stdin_open: true # docker run -i
     tty: true
     volumes:
-      # - ./donkeycar-console:/donkeycar-console  # For dev only
+      - ./donkeycar-console:/donkeycar-console  # For dev only
       # - donkeycar-console/donkeycar-console
-      - ./mycar:/root/mycar
+      - ./mycarv5:/root/mycar
     environment:
       - mode=docker
-      - WEB_CONTROL_PORT=18887
+      - WEB_CONTROL_PORT=8887
     extra_hosts:
       - "host.docker.internal:${HOST_IP}" 
       # We need to add this for linux compatibility
