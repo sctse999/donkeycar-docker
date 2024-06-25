@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile_v5
       args:
         - mode=docker
-    # image: donkeycar:latest
+    image: donkeycar:latest
     hostname: Racer1  # Rename this to Racer2 Racer3 to avoid duplicated names showing in mobile app
     container_name: donkeycar
     ports:

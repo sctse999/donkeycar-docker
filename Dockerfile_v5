@@ -25,7 +25,7 @@ RUN git checkout v5
 RUN . /$venv_name/bin/activate && pip install pip --upgrade
 RUN . /$venv_name/bin/activate && pip install -e .
 # RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
-RUN . /$venv_name/bin/activate && pip install numpy --upgrade
+# RUN . /$venv_name/bin/activate && pip install numpy --upgrade
 
 RUN . /$venv_name/bin/activate && pip install tensorflow==2.9
 
@@ -63,5 +63,9 @@ RUN echo "source /env/bin/activate" > /root/.bashrc
 
 # Run the donkeycar console service
 ENV RUNTIME_ENV=${venv_name}
+
+# Clean up temporary files
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD /${RUNTIME_ENV}/bin/python /donkeycar-console/manage.py runserver 0.0.0.0:8000

@@ -1,4 +1,3 @@
-version: '3'
 services:
   donkey:
     # build: .    # uncomment this if you want to build from dockerfile
@@ -12,6 +11,6 @@ services:
     tty: true
     volumes:
       # - ./donkeycar-console:/donkeycar-console  # For dev only
-      - ./mycar:/root/mycarv5
+      - ./mycarv5:/root/mycar
     environment:
       - mode=docker
