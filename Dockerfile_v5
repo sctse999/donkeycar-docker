@@ -24,16 +24,8 @@ WORKDIR /donkeycar
 RUN git checkout v5
 RUN . /$venv_name/bin/activate && pip install pip --upgrade
 RUN . /$venv_name/bin/activate && pip install -e .
-# RUN . /$venv_name/bin/activate && pip install tensorflow==1.13.1
-# RUN . /$venv_name/bin/activate && pip install numpy --upgrade
 
 RUN . /$venv_name/bin/activate && pip install tensorflow==2.9
-
-# Patch h5py version until donkeycar v3 pin h5py version < 3 
-# RUN . /$venv_name/bin/activate && pip install h5py==2.10.0
-
-# RUN . /$venv_name/bin/activate && python -c 
-
 
 # Install KERAS VIS and ffmpeg for video generation
 RUN . /$venv_name/bin/activate && pip install git+https://github.com/autorope/keras-vis.git
@@ -64,8 +56,16 @@ RUN echo "source /env/bin/activate" > /root/.bashrc
 # Run the donkeycar console service
 ENV RUNTIME_ENV=${venv_name}
 
+# For donkeycar console code
+RUN apt-get install curl tar
+
 # Clean up temporary files
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+EXPOSE 8000
+EXPOSE 8887
+
+COPY ./mycarv5/myconfig.py /root/mycar/myconfig.py
 
 CMD /${RUNTIME_ENV}/bin/python /donkeycar-console/manage.py runserver 0.0.0.0:8000

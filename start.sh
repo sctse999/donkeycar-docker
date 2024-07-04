@@ -7,8 +7,9 @@ case "${system}" in
         export HOST_IP=$(ip addr show docker0 | grep -Po 'inet \K[\d.]+')
         echo $HOST_IP
         
-        # docker-compose -f docker-compose-linux.yml up -d
-        # docker-compose 
+        # docker compose -f docker-compose-linux.yml up -d        
+
+        # Only dev file can be built
         docker compose -f docker-compose-linux-dev.yml up -d --build 
         # docker-compose -f docker-compose-linux-dev.yml up -d
         ;;
